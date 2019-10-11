@@ -2,13 +2,13 @@
 
 ## Exercise I
 
-a) O(n)
+a) O(n) - variable "a" is trying to get to n^3 but only getting n^2 each loop so will take n to get there
 
 
-b)O(n^4)
+b)O(n^2) - while loop within a for loop gets this per my notes
 
 
-c)O(1^n)
+c)O(n) - I'm going to go with this because subtracting 1 each call will run the variable "bunnies" amount of times until it hits the base. Less confident on this one but need to work on robots
 
 ## Exercise II
 
