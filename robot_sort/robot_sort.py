@@ -96,8 +96,27 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        #If the robot is at the beginning of his list of items he's sorting, he can only move right
+        #Once he's started, he has items on his left so can move left but once he reaches the end, can't move right if there's no more items.
         # Fill this out
-        pass
+
+        while not(self.light_is_on()):
+            self.set_light_on()
+            while self.can_move_right():                                                        #While robot can move right and isn't at the end of the list
+                self.swap_item()                                                                #swap items
+                self.move_right()                                                               #move right
+                if self.compare_item() == 1:                                                    # if the item == 1
+                    self.swap_item()                                                            #swap item
+                    self.move_left()                                                            #move left
+                    self.swap_item()                                                            #swap item
+                    self.move_right()                                                           #move right
+                    self.set_light_off()                                                        #turn light off
+                else:                                                                           #else
+                    self.move_left()                                                            #move left
+                    self.swap_item()                                                            #swap item
+                    self.move_right()                                                           #move left
+            while self.can_move_left():                                                         #While Robot can move left
+                self.move_left()                                                                #It moves left
 
 
 if __name__ == "__main__":
